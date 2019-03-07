@@ -81,7 +81,7 @@ def chargen(charset,number):
 
 #PROCESS FUNCTION
 def processprofile(profile):
-	randomize_settings['tempfilename'] = randomize_settings['output'] + '__' + chargen('alphanumeric',8) + '.profile.tmp'			
+	randomize_settings['tempfilename'] = randomize_settings['output'] + '__' + '360ateam' + '.profile.tmp'			
 
 	filewrite('',randomize_settings['tempfilename'],'w')
 
