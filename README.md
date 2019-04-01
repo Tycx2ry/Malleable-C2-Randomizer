@@ -3,4 +3,4 @@
 我修改此项目为了使用于我写的红队基础设置自动化部署项目[LuWu](https://github.com/360-A-Team/LuWu)
 
 ## 模板列表
-    - onedrive.profile 
+ - onedrive.profile 
