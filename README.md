@@ -4,3 +4,4 @@
 
 ## 模板列表
  - onedrive.profile 
+ - jsquery.profile
