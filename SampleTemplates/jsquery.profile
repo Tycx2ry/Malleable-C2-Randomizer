@@ -9,7 +9,7 @@
 
 set sample_name "jQuery Profile";
 set sleeptime "%%number:2%%00";
-set jitter    "1%%number%%";
+set jitter    "3%%number%%";
 set useragent "%%useragent%%";
 
 https-certificate {
